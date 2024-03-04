@@ -259,7 +259,7 @@ _C.EVAL_MODE = False
 # Test throughput only, overwritten by command line argument
 _C.THROUGHPUT_MODE = False
 # local rank for DistributedDataParallel, given by command line argument
-_C.LOCAL_RANK = 0
+_C.LOCAL_RANK = 1
 # for acceleration
 _C.FUSED_WINDOW_PROCESS = False
 _C.FUSED_LAYERNORM = False
@@ -298,7 +298,7 @@ def update_config(config, args):
     if _check_args('data_path'):
         config.DATA.DATA_PATH = args.data_path
     if _check_args('zip'):
-        config.DATA.ZIP_MODE = True
+        config.DATA.ZIP_MODE = False
     if _check_args('cache_mode'):
         config.DATA.CACHE_MODE = args.cache_mode
     if _check_args('pretrained'):
